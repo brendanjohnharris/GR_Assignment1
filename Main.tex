@@ -97,21 +97,51 @@ Where the initial conditions $(x^0, x^1) = (0, 0)$ at $\tau = 0$ constrain $C = 
 
 
 \subsection{}
-A shown in figure~\ref{fig:1}, a photon launched at $t_e$ by a stationary observer will intersect with the world line of the rocket, if it is correctly aimed. 
+A shown in figure~\ref{fig:1}, a photon launched at $t_e$ by a stationary observer will intersect with the world line of the rocket (as long as $t_e$ is less than some critical value). 
 The photon's world line is a straight line with gradient $1$ (a speed of $c$) intersecting $x=0$ at $t_e$: $t -  t_e = x$.
 The rockets world line is the curve $(x, t) = x^\alpha(\tau)$, derived in part $a$.
 The intersection of these two world lines occurs when:
 \begin{align*}
-	\frac{1}{a}\cosh(a\tau) - \frac{1}{a} &= \frac{1}{a} \sinh(a\tau) - t_e\\
-	\implies 1-at_e &= \cosh(a\tau) - \sinh(a\tau) \\
-	&= e^{-a \tau}\\
-	\implies -a \tau &= \ln(1-at_e)\\
-	\implies \tau &= -\frac{1}{a} \ln(1-at_e)\\
+	\frac{1}{a}\cosh(a\tau_r) - \frac{1}{a} &= \frac{1}{a} \sinh(a\tau_r) - t_e\\
+	\implies 1-at_e &= \cosh(a\tau_r) - \sinh(a\tau_r) \\
+	&= e^{-a \tau_r}\\
+	\implies -a \tau_r &= \ln(1-at_e)\\
+	\implies \tau_r &= -\frac{1}{a} \ln(1-at_e)\\
 \end{align*}
 
 
 
+\subsection{}
 
+The relativistic Doppler shift with an angle of $0$ between a photon and a target is:
+$$E_r = E_e\sqrt{\frac{1 - v}{{1 + v}}},$$
+where $E_e$ is the energy of the photon in the rest frame of the source moving at a velocity of $-v$ relative to the rocket, which receives a photon of energy $E_r$.
+The velocity of the rocket at the time of receiving the photon is:
+$$v(\tau_r) = \frac{dx}{dt} = \frac{dx}{d\tau} \cdot \frac{d\tau}{dt} = \frac{u^x(\tau_r)}{u^t(\tau_r)} = \tanh(a\tau_r)$$
+Therefore:
+\begin{align*}
+	\frac{E_r}{E_e} &= \sqrt{\frac{1 - \tanh(a\tau_r)}{{1 + \tanh(a\tau_r)}}}\\
+	&=  \sqrt{\frac{1- \frac{\exp({2a\tau_r}) - 1}{\exp({2a\tau_r}) + 1}}{1 + \frac{\exp({2a\tau_r}) - 1}{\exp({2a\tau_r}) + 1}}}\\
+	&=  \sqrt{\frac{\exp({2a\tau_r}) + 1 - \exp({2a\tau_r}) + 1}{\exp({2a\tau_r}) + 1 + \exp({2a\tau_r}) - 1}}\\
+	&=  \sqrt{\frac{2}{2\exp({2a\tau_r})}}\\
+	&=  e^{-a\tau_r},
+\end{align*}
+taking the positive solution for positive energy.
+From the previous part, this also means $ \frac{E_r}{E_e} = 1 - a t_e$.
+
+\subsection{}
+The velocity of the rocket, measured by the stationary observer, asymptotically approaches the speed of light, as indicated by the equations derived in part $a$. 
+This means the gradient of the rocket's world line approaches unity, shown in figure ?. 
+If the rocket observes the stationary observer, what it sees will slow down increasingly as they accelerate.
+For example, figure ? shows the world-lines of a scenario in which the stationary observer sends a photon to the moving rocket at regular intervals of $\Delta t$ (in the stationary observers own time).
+While they have a small acceleration, the proper time of the moving rocket at which it receives the photon (related to the length of its world line) will be slightly larger than the time at which the stationary observer emits the photon. This discrepancy between $\Delta \tau_1$ incorporates both the travel time of the photon and the acceleration of the rocket, since and this proper time is also larger than the time at which the photon arrives at the rocket.
+At the second increment, $2\Delta t$, another photon is emitted by the stationary observer.
+The proper time at which it arrives at the rocket is again greater than the coordinate time, and moreso. 
+Hence the time between equally spaced events in the stationary observers frame is increased when viewed by the rocket, so the rocket's view of the origin is slowed-down as it accelerates.
+Finally, the third photon emitted by the stationary observer has a world-line that is asymptotic to world-line of the rocket. 
+The rocket never receives this photon; the rockets view of the stationary observer becomes 'frozen' as it approaches this critical time, $t_h$ (the third interval of proper time, $\Delta \tau_3$, is infinite, assuming the rocket never ceases accelerating).
+This represents the Rindler horizon; no signals emitted by the observer later $t_h$ can be received by the rocket.
+This is also clear from the equation in part $c$, which shows the proper time at which emitted photons are received asymptotes to $\infty$ as $t_e \to \frac{1}{a} = t_h$.
 
 
 %  *  ██████  ██████▄
@@ -181,16 +211,69 @@ Comparing the the rearranged equations of motion above, this gives:
 \begin{align*}
 justwritethemout
 \end{align*}
-
+(another 4 can be obtained by interchanging the lower indices).
 
 
 \subsection{}
-Since the metric is diagonal ($g^{\alpha \beta} = 0$ when $\alpha \ne \beta$), the relationship between the metric and the Christoffel symbols can be simplified to:
+Since the metric is diagonal ($g^{\alpha \delta} = 0$ when $\alpha \ne \delta$), the relationship between the metric and the Christoffel symbols can be simplified to:
 $$\Gamma^\alpha_{\beta \gamma} = \frac{1}{2} g^{\alpha \alpha}(g_{\beta \beta , \gamma} + g_{\gamma \gamma , \beta} - g_{\beta \gamma , \alpha}), $$
-since all other terms are zero.
+since all other terms are zero. 
+Also, the lower indices can be interchanged since Christoffel symbols are symmetric.
 
-.............justworkthroughthem.............
+The metric is:
+\begin{align*}
+	g_{\alpha\beta} &= \begin{bmatrix} -\left(1-\frac{2m}{r}\right) & 0 & 0 & 0 \\
+		0 & \left( 1 - \frac{2m}{r} \right)^{-1} & 0 & 0\\
+		0 & 0 & r^2 & 0 \\
+		0 & 0 & 0 & r^2 \sin^2(\theta)
+	\end{bmatrix}
+\end{align*}
 
+Then:
+\begin{align*}
+g_{\beta \beta, \gamma} &= \begin{bmatrix} 0 & -\frac{2m}{r^2}  & 0 & 0 \\
+			0 &\frac{-2m}{(r-2m)^2} & 0 & 0\\
+			0 & 2r & 0 & 0 \\
+			0 & 2r\sin(\theta) & 2r^2 \sin(\theta) \cos(\theta) & 0
+		\end{bmatrix}\\
+% g_{\beta \gamma, \alpha} &= \begin{bmatrix} -\left(1-\frac{2m}{r}\right) & 0 & 0 & 0 \\
+% 			0 & \left( 1 - \frac{2m}{r} \right)^{-1} & 0 & 0\\
+% 			0 & 0 & r^2 & 0 \\
+% 			0 & 0 & 0 & r^2 \sin^2(\theta)
+% \end{bmatrix}
+\end{align*}
+where, in matrix form, $g_{\gamma \gamma, \beta}$ is the transpose of $g_{\beta \beta, \gamma}$.
+Therefore:
+\begin{align*}
+g_{\beta \beta, \gamma} + g_{\gamma \gamma, \beta} &= \begin{bmatrix} 0 & -\frac{2m}{r^2}  & 0 & 0 \\
+	-\frac{2m}{r^2} &\frac{-4m}{(r-2m)^2} & 2r & 2r\sin(\theta)\\
+	0 & 2r & 0 & 2r^2 \sin(\theta) \cos(\theta) \\
+	0 & 2r\sin(\theta) & 2r^2 \sin(\theta) \cos(\theta) & 0
+\end{bmatrix}
+\end{align*}
+\subsubsection{$\boldsymbol{\Gamma^t_{\beta \gamma}}$}
+Then, for $\alpha = t$:
+\begin{align*}
+	g_{\beta\gamma,t} &= 0
+\end{align*}
+And:
+\begin{align*}
+	\Gamma^t_{\beta \gamma} &= \frac{1}{2}  \left(1-\frac{2m}{r}\right) (g_{\beta \beta, \gamma} + g_{\gamma \gamma, \beta})\\
+	\implies \Gamma^t_{t r} &= \frac{1}{2}  \left(1-\frac{2m}{r}\right)\left(-\frac{2m}{r^2} \right)\\
+	&= -\left(1-\frac{2m}{r}\right)\frac{m}{r^2}
+\end{align*}
+
+%Then, a first batch of non-zero Christoffel symbols occur when $g_{\beta \beta, \gamma} = g_{\gamma \gamma, \beta} = 0$ (and $g_{\beta \gamma, \alpha}$ is non-zero):
+
+% \subsubsection{$\Gamma^t$}
+% \begin{align*}
+% 	\Gamma^t_{t t} &= \Gamma^t_{t \theta} = \Gamma^t_{t \phi},
+% \end{align*}
+% since $g_{tt}$ does not depend on $t$ and $g_{t \theta}$ (or $g_{t \phi}$) does not depend on $t$ or $\theta$ (or $\phi$).
+% Then:
+% \begin{align*}
+% 	\Gamma^t_{r r}
+% \end{align*}
 % Then by the Euler-Lagrange equation (equating the two above expressions):
 % \begin{align*}
 % 	e &= \left(1-\frac{2m}{r}\right)\frac{d t}{d\tau}\\
