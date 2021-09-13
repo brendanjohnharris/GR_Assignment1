@@ -45,7 +45,6 @@
 
 \section{}
 \subsection{}
-Given:
 \begin{align*}-1 &= \eta_{\alpha \beta} u^\alpha u^\beta\\
 0 &= \eta_{\alpha \beta} u^\alpha a^\beta \\
 a^2 &= \eta_{\alpha \beta} a^\alpha a^\beta
@@ -116,19 +115,31 @@ The intersection of these two world lines occurs when:
 
 The relativistic Doppler shift with an angle of $0$ between a photon and a target is:
 $$E_r = E_e\sqrt{\frac{1 - v}{{1 + v}}},$$
-where $E_e$ is the energy of the photon in the rest frame of the source moving at a velocity of $-v$ relative to the rocket, which receives a photon of energy $E_r$.
-The velocity of the rocket at the time of receiving the photon is:
+where $E_e$ is the energy of the photon in the rest frame of the source moving at $-v$ relative to the rocket, which receives a photon of energy $E_r$.
+The rocket's velocity at the time of receiving the photon is:
 $$v(\tau_r) = \frac{dx}{dt} = \frac{dx}{d\tau} \cdot \frac{d\tau}{dt} = \frac{u^x(\tau_r)}{u^t(\tau_r)} = \tanh(a\tau_r)$$
 Therefore:
 \begin{align*}
 	\frac{E_r}{E_e} &= \sqrt{\frac{1 - \tanh(a\tau_r)}{{1 + \tanh(a\tau_r)}}}\\
 	&=  \sqrt{\frac{1- \frac{\exp({2a\tau_r}) - 1}{\exp({2a\tau_r}) + 1}}{1 + \frac{\exp({2a\tau_r}) - 1}{\exp({2a\tau_r}) + 1}}}\\
 	&=  \sqrt{\frac{\exp({2a\tau_r}) + 1 - \exp({2a\tau_r}) + 1}{\exp({2a\tau_r}) + 1 + \exp({2a\tau_r}) - 1}}\\
-	&=  \sqrt{\frac{2}{2\exp({2a\tau_r})}}\\
-	&=  e^{-a\tau_r},
+	%&=  \sqrt{\frac{2}{2\exp({2a\tau_r})}}\\
+	&=  e^{-a\tau_r}.
 \end{align*}
-taking the positive solution for positive energy.
 From the previous part, this also means $ \frac{E_r}{E_e} = 1 - a t_e$.
+
+
+\begin{figure}[H]
+	{ \centering
+		 \includegraphics[width=\textwidth]{Figures/1b}
+		 \caption{\textbf{A photon launched at an accelerating rocket.} The time at which the rocket receives the photon can be calculated from the intersection of their world lines.}
+	 \label{fig:1}}
+	 {\centering
+		 \includegraphics[width=0.85\textwidth]{Figures/1d}
+		 \caption{\textbf{Successive photons launched at an accelerating rocket}. The length of intervals between received photons along the rocket's world line increases to infinity for photons launched at equally spaced intervals by a  non-accelerating observer. }
+	 \label{fig:2}}
+ \end{figure}
+
 
 \subsection{}
 The velocity of the rocket, measured by the stationary observer, asymptotically approaches the speed of light, as indicated by the equations derived in part $a$. 
@@ -142,21 +153,9 @@ Hence the time between equally spaced events in the stationary observers frame i
 Finally, the third photon emitted by the stationary observer has a world-line that is asymptotic to world-line of the rocket. 
 The rocket never receives this photon; the rockets view of the stationary observer becomes 'frozen' as it approaches this critical time, $t_h$ (the third interval of proper time, $\Delta \tau_3$, is infinite, assuming the rocket never ceases accelerating).
 This represents the Rindler horizon; no signals emitted by the observer later $t_h$ can be received by the rocket.
-This is clear from the equation in part $c$, which shows the proper time at which emitted photons are received asymptotes to $\infty$ as $t_e \to \frac{1}{a} = t_h$.
+The Rindler horizon is clear from the equation in part $c$, which shows the proper time at which emitted photons are received asymptotes to $\infty$ as $t_e \to \frac{1}{a} = t_h$.
 There is also a point behind the origin (the intersection of the light line passing through the original at $t_h$) that the rocket cannot view past, although the rocket will see points closer than this spatial horizon (such as the origin) approach it asymptotically.
 The image of the origin will also appear red-shifted as the rocket gains velocity, and fainter as it gains distance.
-
-
-\begin{figure}[H]
-   { \centering
-        \includegraphics[width=\textwidth]{Figures/1b}
-        \caption{\textbf{A photon launched at an accelerating rocket.} The time at which the rocket receives the photon can be calculated from the intersection of their world lines.}
-    \label{fig:1}}
-    {\centering
-        \includegraphics[width=0.85\textwidth]{Figures/1d}
-        \caption{\textbf{Successive photons launched at an accelerating rocket}. The length of intervals between received photons along the rocket's world line increases to infinity for photons launched at equally spaced intervals by a  non-accelerating observer. }
-    \label{fig:2}}
-\end{figure}
 
 
 
@@ -211,30 +210,34 @@ Expanding and rearranging the equations of motion above:
 	0 &= \left(1-\frac{2m}{r}\right) \frac{d^2 t}{d\tau^2}  + \frac{dt}{d\tau} \frac{2m}{r^2} \frac{dr}{d\tau} \\
 	\frac{d^2r}{d\tau^2} \frac{r}{r-2m} - \left(\frac{dr}{dt}\right)^2 \frac{2m}{(r-2m)^2}&=   -\frac{m}{r^2} \left(\frac{dt}{d\tau} \right)^2 - \frac{m}{(r-2m)^2}  \left(\frac{dr}{d\tau} \right)^2 + r  \left(\frac{d\theta}{d\tau} \right)^2  + r\sin^2(\theta)  \left(\frac{d\phi}{d\tau} \right)^2 \\
 	r^2 \frac{d^2\theta}{d\tau^2} + 2r \frac{dr}{d\tau} \frac{d\theta}{d\tau}  &= r^2 \sin(\theta)\cos(\theta) \left( \frac{d\phi}{d\tau} \right)^2 \\
-	0 &= r^2 \sin^2(\theta) \frac{d^2\phi}{d\tau^2} + 2r \sin^2(\theta) \frac{d\phi}{d\theta}\frac{dr}{d\theta} + 2r^2 \cos(\theta) \sin(\theta) \frac{d\theta}{d\tau} \frac{d\phi}{d\theta}
+	0 &= r^2 \sin^2(\theta) \frac{d^2\phi}{d\tau^2} + 2r \sin^2(\theta) \frac{d\phi}{d\tau}\frac{dr}{d\tau} + 2r^2 \cos(\theta) \sin(\theta) \frac{d\theta}{d\tau} \frac{d\phi}{d\tau}
 \end{align*}
 Then:
 \begin{align*}
 	\frac{d^2 t}{d\tau^2} &= - \frac{2m}{r^2} \left(1-\frac{2m}{r}\right)^{-1} \frac{dt}{d\tau}  \frac{dr}{d\tau}\\
 	\frac{d^2r}{d\tau^2} &=   -\frac{m}{r^2} \left(1-\frac{2m}{r}\right) \left(\frac{dt}{d\tau} \right)^2 + \frac{m}{r^2\left(1-\frac{2m}{r}\right)}  \left(\frac{dr}{d\tau} \right)^2 + (r - 2m)  \left(\frac{d\theta}{d\tau} \right)^2  + (r - 2m)\sin^2(\theta)  \left(\frac{d\phi}{d\tau} \right)^2\\
 	\frac{d^2\theta}{d\tau^2}  &= \sin(\theta)\cos(\theta) \left( \frac{d\phi}{d\tau} \right)^2 - \frac{2}{r} \frac{dr}{d\tau} \frac{d\theta}{d\tau} \\
-	 \frac{d^2\phi}{d\tau^2} &= - \frac{2}{r}  \frac{d\phi}{d\theta}\frac{dr}{d\theta} - 2 \frac{\cos(\theta)}{ \sin(\theta)} \frac{d\theta}{d\tau} \frac{d\phi}{d\theta}
+	 \frac{d^2\phi}{d\tau^2} &= - \frac{2}{r}  \frac{d\phi}{d\tau}\frac{dr}{d\tau} - 2 \frac{\cos(\theta)}{ \sin(\theta)} \frac{d\theta}{d\tau} \frac{d\phi}{d\tau}
 \end{align*}
 The general geodesic equation is:
 \begin{align*}
 \frac{d^2 x^\alpha}{d\tau^2} &= -\Gamma^\alpha_{\beta \gamma} \frac{dx^\beta}{d\tau}\frac{dx^\gamma}{d\tau}
 \end{align*}
 Comparing the rearranged equations of motion to the general geodesic equation gives:
-\begin{align*}
+\begin{align*}\
+	\begin{split}
 	\Gamma^t_{r t} &=  \Gamma^t_{t r} = \left(1-\frac{2m}{r}\right)^{-1} \frac{m}{r^2}\\
 	\Gamma^r_{tt} &=  \left( 1 - \frac{2m}{r} \right) \frac{m}{r^2}\\
 \Gamma^r_{rr} &=   -\frac{m}{r^2} \left(1-\frac{2m}{r}\right)^{-1} \\
-\Gamma^r_{\theta \theta} &=  -\left( r - 2m \right) \\
+\Gamma^r_{\theta \theta} &=  -\left( r - 2m \right)
+	\end{split}
+	\begin{split}
 \Gamma^r_{\phi \phi} &=  -\left( r - 2m \right) \sin^2(\theta)\\
 \Gamma^\theta _{\theta r} &= \Gamma^\theta _{r \theta} = \frac{1}{r}\\
 \Gamma^\theta _{\phi \phi} &=  -\sin(\theta) \cos(\theta)\\
 \Gamma^\phi_{\phi r} &= \Gamma^\phi_{r \phi} =  \frac{1}{r}\\
 \Gamma^\phi_{\theta \phi} &= \Gamma^\phi_{\phi \theta} = \frac{ \cos(\theta)}{\sin(\theta)}
+	\end{split}
 \end{align*}
 Note that for symbols with two unique lower indices the coefficients of the equations of motion are halved (one half to each ordering of the indices/derivatives, to ensure the symbols are symmetric).
 
@@ -247,11 +250,6 @@ The metric is:
 		0 & 0 & r^2 & 0 \\
 		0 & 0 & 0 & r^2 \sin^2(\theta)
 	\end{bmatrix}\\
-	\implies g^{\alpha\beta} &= \begin{bmatrix} -\left(1-\frac{2m}{r}\right)^{-1} & 0 & 0 & 0 \\
-		0 & \left( 1 - \frac{2m}{r} \right) & 0 & 0\\
-		0 & 0 & r^{-2} & 0 \\
-		0 & 0 & 0 & r^{-2} \sin^{-2}(\theta)
-	\end{bmatrix}
 \end{align*}
 
 Since the metric is diagonal ($g^{\alpha \delta} = 0$ when $\alpha \ne \delta$), the relationship between the metric and the Christoffel symbols can be simplified to:
